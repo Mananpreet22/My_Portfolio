@@ -6,7 +6,7 @@ const projects = [
     tags: ['Python', 'Node.js', 'SQLlite'],
     accent: '#4F8EF7',
     icon: '⚡',
-    github: '#',
+    github: 'https://github.com/Mananpreet22/ISP_Accounting',
     live: '#',
   },
   
@@ -21,10 +21,10 @@ const projects = [
     live: 'https://mananpreet22.github.io/Tic-Tac-toe/',
   },
   {
-    title: 'Luminary',
+    title: 'Amazon Clone',
     type: 'E-Commerce',
-    desc: 'A high-performance e-commerce platform for independent artists — built with Next.js, Stripe, and a headless CMS. 99 Lighthouse score.',
-    tags: ['Next.js', 'Stripe', 'Sanity', 'PostgreSQL'],
+    desc: 'A simple Amazon clone built with React.js and Tailwind CSS, featuring a responsive design and a functional shopping cart.',
+    tags: ['React.js', 'Tailwind CSS','MySQL'],
     accent: '#4F8EF7',
     icon: '🛒',
     github: '#',
