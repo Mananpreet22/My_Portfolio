@@ -74,8 +74,8 @@ export default function About() {
               {[
                 { label: 'Based in', value: 'India, Harayan ,Assandh' },
                 { label: 'Education', value: 'BCA + Fine art' },
-                { label: 'Focus', value: 'React · Node · Three.js' },
-                { label: 'Medium', value: 'Digital · Acrylic' },
+                { label: 'Focus', value: 'React · Node · Digital Art & Conceptual Design' },
+                { label: 'Medium', value: 'Digital · Acrylic · Traditional' },
               ].map(({ label, value }) => (
                 <div key={label} className="bg-[#111827] rounded-lg p-4 border border-white/5">
                   <p className="font-mono text-xs text-slate-500 mb-1">{label}</p>

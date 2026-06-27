@@ -38,7 +38,7 @@ const projects = [
     accent: '#C084FC',
     icon: '🌌',
     github: 'https://github.com/Mananpreet22/Gambling_app',
-    live: '#',
+    live: 'https://mananpreet22.github.io/Gambling_app/',
   },
 ]
 
