@@ -16,10 +16,10 @@ const artPieces = [
     shape: 'lines',
   },
   {
-    title: 'Fantasy Knight',
-    medium: 'Pencil colours · paper',
+    title: 'Fantasy Sinobi',
+    medium: 'Pencil · paper',
     year: '2024',
-    image: 'public/art/Knight.jpg',
+    image: 'public/art/Sekiro.jpg',
     colors: ['#C084FC', '#f0abfc', '#1B2A4A'],
     shape: 'wave',
   },

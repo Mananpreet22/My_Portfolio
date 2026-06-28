@@ -1,14 +1,42 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+
+// ─── YOUR EMAILJS KEYS ───────────────────────────────────────
+const SERVICE_ID  = 'YOUR_SERVICE_ID'  
+const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'  
+const PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'  
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '', type: 'dev' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    setError('')
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name:    form.name,
+          email:   form.email,
+          message: form.message,
+          type:    form.type === 'dev' ? 'Dev Project' : form.type === 'art' ? 'Art Commission' : 'Both',
+        },
+        PUBLIC_KEY
+      )
+      setSent(true)
+    } catch (err) {
+      setError('Something went wrong. Please try again or email me directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -30,10 +58,10 @@ export default function Contact() {
           {/* Left info */}
           <div className="md:col-span-2 space-y-6">
             {[
-              { icon: '✉', label: 'Email', value: 'Mananpreet123@gmail.com', href: 'mailto:Mananpreet123@gmail.com', color: '#4F8EF7' },
-              { icon: '🐙', label: 'GitHub', value: 'github.com/Mananpreet22', href: '#', color: '#4F8EF7' },
-              { icon: '🎨', label: 'Behance', value: 'somthing.com', href: '#', color: '#C084FC' },
-              { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/Mananpreet', href: '#', color: '#4F8EF7' },
+              { icon: '✉', label: 'Email', value: 'Mananpreetgaba123@gmail.com', href: 'mailto:Mananpreetgaba123@gmail.com' },
+              { icon: '🐙', label: 'GitHub', value: 'github.com/Mananpreet22', href: 'https://github.com/Mananpreet22' },
+              { icon: '🎨', label: 'Behance', value: 'somthing.com', href: '#' },
+              { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/Mananpreet', href: '#' },
             ].map((item) => (
               <a
                 key={item.label}
@@ -59,7 +87,7 @@ export default function Contact() {
                 <h3 className="font-serif text-2xl font-bold text-white">Message sent!</h3>
                 <p className="font-sans text-slate-400 text-sm">I'll get back to you within 24 hours.</p>
                 <button
-                  onClick={() => setSent(false)}
+                  onClick={() => { setSent(false); setForm({ name: '', email: '', message: '', type: 'dev' }) }}
                   className="font-mono text-sm text-[#4F8EF7] hover:text-[#93c5fd] transition-colors mt-2"
                 >
                   Send another →
@@ -125,12 +153,20 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Error message */}
+                {error && (
+                  <p className="font-mono text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-4 py-3">
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full font-mono text-sm py-3 rounded-lg font-bold text-[#090D1A] transition-all duration-300 hover:opacity-90 hover:shadow-lg"
+                  disabled={loading}
+                  className="w-full font-mono text-sm py-3 rounded-lg font-bold text-[#090D1A] transition-all duration-300 hover:opacity-90 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ background: 'linear-gradient(135deg, #4F8EF7, #C084FC)' }}
                 >
-                  Send message →
+                  {loading ? 'Sending...' : 'Send message →'}
                 </button>
               </form>
             )}
