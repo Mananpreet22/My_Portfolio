@@ -116,7 +116,7 @@ export default function Work() {
 
         <div className="text-center mt-10">
           <a
-            href="#"
+            href="https://github.com/Mananpreet22"
             className="font-mono text-sm text-slate-500 hover:text-[#4F8EF7] transition-colors group inline-flex items-center gap-2"
           >
             View all 8 projects
