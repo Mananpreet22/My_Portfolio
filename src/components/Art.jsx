@@ -167,7 +167,7 @@ export default function Art() {
         {/* Heading */}
         <div className="text-center mb-16">
           <p className="font-mono text-xs text-[#C084FC] tracking-widest uppercase mb-3">
-            // Visual art
+            // Art
           </p>
           <h2 className="font-serif text-4xl font-bold text-white">
             The <span className="text-gradient-violet italic">art</span> side
