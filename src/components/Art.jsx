@@ -11,7 +11,7 @@ const artPieces = [
     title: 'Fine Line portrait',
     medium: 'Pencil · Paper',
     year: '2024',
-    image: '/Art/Dark-Souls.jpg',
+    image: '/Art/Dark-souls.jpg',
     colors: ['#4F8EF7', '#0d1117', '#93c5fd'],
     shape: 'lines',
   },
