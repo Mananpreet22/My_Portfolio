@@ -214,7 +214,7 @@ export default function Art() {
         {/* Footer link */}
         <div className="text-center mt-10">
           <a
-            href="#"
+            href='https://www.instagram.com/mananpreetgaba?igsh=MXQxbnM1am51d2w2aA=='
             className="font-mono text-sm text-slate-500 hover:text-[#C084FC] transition-colors group inline-flex items-center gap-2"
           >
             See full gallery (10+ pieces)

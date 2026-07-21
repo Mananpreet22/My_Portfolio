@@ -59,7 +59,7 @@ export default function Contact() {
             {[
               { icon: '✉', label: 'Email', value: 'Mananpreetgaba123@gmail.com', href: 'mailto:Mananpreetgaba123@gmail.com' },
               { icon: '🐙', label: 'GitHub', value: 'github.com/Mananpreet22', href: 'https://github.com/Mananpreet22' },
-              { icon: '🎨', label: 'Behance', value: 'somthing.com', href: '#' },
+              { icon: '🎨', label: 'Instagram', value: 'instagram.com/Mananpreet', href: 'https://www.instagram.com/mananpreetgaba?igsh=MXQxbnM1am51d2w2aA==' },
               { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/Mananpreet', href: '#' },
             ].map((item) => (
               <a
